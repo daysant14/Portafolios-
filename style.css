@@ -1,0 +1,1111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #081629;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+    --red: red;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+
+html{
+    font-size: 62.5%;
+    overflow-x:hidden ;
+
+}
+
+
+
+
+.header{
+  
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;/*establece la posición en el eje Z*/
+  transition: .3s;
+
+} 
+
+.header.sticky{
+    background: var(--second-bg-color);
+}
+
+
+.logo{
+  position: relative;  
+  font-size: 25px;
+  color: #ededed;
+  text-decoration: none;
+  font-weight: 600;  
+
+} 
+
+
+.logo::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay:.4s ;
+
+
+}
+
+.navbar a {
+  font-size: 25px;
+  color:#ededed;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: .3s;
+} 
+
+.navbar a:hover,
+.navbar a.active /*Deja de un color solo a Home*/ { 
+ color: #00abf0;
+} 
+
+/* Estilos generales para la sección home */
+.home {
+    height: 100vh; /* Establece la altura del elemento .home al 100% de la altura de la ventana del navegador */
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos secundarios dentro del contenedor flexible (.home) */
+    justify-content: space-between; /* Espacia los elementos horizontalmente */
+    padding: 0 10%;
+    background: var(--second-bg-color);
+    position: relative; /* Asegura que el contenedor de la imagen esté posicionado correctamente */
+}
+
+/* Estilo para el contenido */
+.home-content {
+    flex: 1; /* Permite que el contenido tome el espacio necesario */
+   
+    padding-right: 50px; /* Ajusta el espaciado según tu preferencia */
+}
+
+/* Texto */
+.home-content h1 {
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-content h1::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: .1s;
+}
+
+.home-content h3 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+.home-content h3::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.home-content p {
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+/* Botones */
+.home-content .btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.home-content .btn-box::before {
+    position: relative;
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+    z-index: 2;
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box a:hover {
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+
+/* Animación del segundo botón */
+.btn-box a:nth-child(2):hover {
+    color: #081b29;
+}
+
+.btn-box a:nth-child(2)::before {
+    background: #00abf0;
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+/* Botones de redes sociales */
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+    z-index: 2;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%; /* Pone los bordes circulares */
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.home-sci a:hover {
+    color: #081b29;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+/* Estilo para el contenedor de la imagen */
+.home-img-container {
+    flex: 0 0 350px; /* Ajusta el tamaño de la imagen según tu preferencia */
+    height: 350px; /* Ajusta el tamaño de la imagen según tu preferencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 5px solid #00abf0; /* Borde azul claro neón */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    box-shadow: 0 0 15px #00abf0; /* Agrega un efecto de neón */
+}
+
+/* Estilo para la imagen */
+.home-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+}
+
+/*KEYFRAMES ANIMATION*/
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+
+
+
+/*Sobre mi seccion*/
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--bg-color);
+    padding-bottom:6rem;
+    color: #ededed;
+    padding: 50px 10%;
+
+} 
+
+.heading{
+ display: flex;
+ justify-content: center;
+ font-size: 5rem;
+ margin-bottom:3rem;
+ gap: 10px;;
+ 
+
+} 
+
+.about-img {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%; /* Ajusta este valor según sea necesario para obtener la forma deseada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*width: 18rem;*/
+    /*height: 18rem;*/
+   /* border-radius: 1000%; /* Ajusta este valor según sea necesario para obtener la forma deseada */
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+} 
+
+span{
+    color: var(--main-color);
+}
+
+.about-img img {
+    width: 90%;
+    border-radius: 50%; 
+    border: .2rem solid var(--main-color);
+
+} 
+
+.about-img .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .2rem solid var(--second-bg-color);
+    border-bottom: .2rem solid var(--second-bg-color);;
+    border-left: .2rem solid var(--main-color);
+    border-right: 0.2rem solid var(--main-color);
+}  
+
+.about-content{
+    text-align: center;
+    
+} 
+
+.about-content h3{
+    font-size: 2.6rem;
+
+
+} 
+
+.about-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;    
+} 
+
+.btn-box.btns{
+    display: inline-block;
+    width: 15rem;
+} 
+
+
+.btn-box.btns a ::before{
+
+   background: var(--second-bg-color); 
+}
+
+
+/* Estilos para la sección de educación en pantalla grande */
+.education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+    background-color: var(--second-bg-color);
+}
+
+.education-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten automáticamente */
+    max-width: 1200px; /* Establece un ancho máximo para la sección */
+    margin: 0 auto; /* Centra la sección horizontalmente */
+    padding: 0 20px; /* Añade un poco de espacio a los lados */
+}
+
+.education-content {
+    flex: 0 1 calc(33.33% - 20px); /* Ancho del contenedor y espacio entre ellos */
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    background: var(--bg-color);
+    margin-top: 6px; /* Margen superior de los contenedores */
+    box-sizing: border-box; /* Asegura que el ancho incluya el padding y el borde */
+    text-align: center; /* Centra el texto */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Añade transición para el efecto de animación */
+}
+
+.education-content:hover {
+    transform: translateY(-10px); /* Hace que el contenedor se eleve al pasar el mouse sobre él */
+    box-shadow: 0 0 15px 5px rgba(173, 216, 230, 0.7); /* Efecto de neón azul claro */
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px; /* Margen inferior del título */
+}
+
+.img {
+    width: 120px; /* Ancho mayor para la imagen */
+    height: auto; /* Ajusta la altura automáticamente */
+    margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+}
+
+.year {
+    font-size: 14px;
+    margin-bottom: 10px; /* Espacio entre el año y el título */
+    display: flex;
+    justify-content: center; /* Centra el año */
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo el contenido dentro de la caja */
+}
+
+
+
+
+ /*PROYECTS*/
+ .proyect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+    background-color: var(--bg-color);
+
+    
+}
+
+.proyect-box {
+    display: flex;
+    flex-direction: row; /* Cambiado para alinear en una fila */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten al contenedor */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+    width: 100%;
+    max-width: 800px; /* Ajustar según sea necesario */
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 10px; /* Ajustar según sea necesario */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Añadir sombra si lo deseas */
+}
+
+.proyect-content {
+    flex: 1 1 calc(33.333% - 20px); /* Ajusta el tamaño de los contenedores y espacio entre ellos */
+    margin: 10px; /* Espacio entre elementos */
+    width: 100%;
+    position: relative;
+    padding: 1.5rem;
+    border: none;
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    margin-top: 6px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    background-color: var(--second-bg-color); /* Fondo blanco para los proyectos */
+}
+
+
+.text {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* IMAGENES SECCIÓN ACADÉMICA / Proyectos*/
+.img-proyect {
+    width: 100%;
+    height: 200px; /* Ajustar según sea necesario */
+    object-fit: cover;
+}
+
+/* Hacer zoom en el contenedor al pasar el ratón */
+.proyect-content:hover {
+    transform: scale(1.05); /* Reducir el efecto de zoom */
+}
+
+/* Alineación del botón */
+.btn-boxp {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+
+    margin-top: 2rem; /* Espacio superior */
+
+}
+
+.btn {
+    padding: 5px 15px; /* Ajusta el tamaño del botón */
+    font-size: 16px; /* Ajusta el tamaño del texto del botón */
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5%;
+}
+
+.btn:hover {
+    transform: scale(1.1); /* Efecto de zoom en el botón al pasar el ratón */
+}
+
+.btn-boxp .btn {
+    
+    width: 150px;
+    height: 50px;
+    background: var(--second-bg-color);
+    border: 2px solid;
+    border-radius: 8px;
+    font-size: 19px;
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    margin-right: 10px;
+}
+
+.btn-boxp .btn:hover {
+    color: var(--main-color);
+}
+
+.btn-boxp .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-boxp .btn:hover::before {
+    width: 50%;
+}
+
+.btn-boxp .btn:last-child {
+    margin-right: 0; /* Eliminar el margen derecho del último botón */
+}
+
+
+ /*SKILLS*/
+ .skills {
+   
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--second-bg-color);
+  
+  
+  
+}
+
+.skills .heading {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom:3rem;
+    gap:10px;
+}
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center; /* Centra los elementos secundarios horizontalmente */
+    gap: 5rem;
+    padding-top: 30px;
+    width: 90%;
+    padding-left: 28%;
+    padding-right: 20%;
+    
+}
+
+.skills-column {
+    flex: 1 1 40rem;
+}
+
+.title h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+
+.skills-box .skills-content {
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.skills-box .skills-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.skills-box .skills-content:hover::before {
+    width: 100%;
+}
+
+.skills-content .progress {
+    padding: 1rem 0;
+}
+
+.skills-content .progress h3 {
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-content .progress h3 span {
+    color: var(--text-color);
+}
+
+.skills-content .progress .bar {
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.skills-content .progress .bar span {
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
+    width: 80%;
+   /* background: orangered;*/
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
+    width: 80%;
+    /*background: #61dafb;*/
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
+    width: 80%;
+    /*background: #4F5D95;*/
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
+    width: 80%;
+    /*background: #f7df1e;*/
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span {
+    width: 70%;
+    /*background: #563d7c;*/
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span {
+    width: 70%;
+    /*background: #178600*/
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(7) .bar span {
+    width: 70%;
+    /*background:  #3572A5;*/
+}
+
+
+/*SECCIÓN CONTACTOS*/
+
+.contact{
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--bg-color);
+    
+   
+
+}
+
+.contact form{
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.contact form .input-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.contact form .input-box  .input-field{
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+
+} 
+
+.contact form .input-box  .input-field input,
+.contact form .textarea-field textarea {
+    width:100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+
+} 
+
+.contact form .input-box  .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder {
+    color: var(--text-color);
+}
+
+
+/*.contact form .focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: red;
+    border-radius:.6rem;
+    z-index: -1;  
+    transition: .5s;
+  
+} */
+
+
+
+
+.contact form .textarea-field{
+    position:relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+    
+}
+
+.contact form .textarea-field textarea{
+    resize:none ;
+
+}
+
+.contact form .btn-box .btn{
+    cursor: pointer;
+}
+
+
+
+
+/*Botones Contactos*/
+
+
+
+ .btn-box {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 2rem; /* Espacio superior */
+}
+
+ .btn-box .btn {
+    width: 150px;
+    height: 50px;
+    background:var(--second-bg-color);
+    border: 2px solid;
+    border-radius: 8px;
+    font-size: 19px;
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+   
+}
+
+.btn-box .btn:hover {
+    color: var(--main-color);
+}
+
+.btn-box .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+  
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box .btn:hover::before {
+    width: 100%;
+}
+
+
+
+
+/*FOOTER SESION*/
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color) ;
+
+}
+
+.footer-text p{
+    font-size:1.6rem ;
+}
+
+.footer-iconTop a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+
+} 
+
+.footer-iconTop a::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+
+}
+
+.footer-iconTop a:hover::before{
+    width: 100%;
+
+
+}
+
+
+
+
+.footer a i{
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .5s;
+
+
+} 
+
+
+.footer a:hover i{
+    color: var(--main-color);
+}
+
+
+
+/*BREAKPOINTS*/
+
+@media(max-width: 1200px){
+    .html{
+        font-size: 55%;
+    }
+} 
+
+@media(max-width: 991px){
+    .header{
+        padding: 2rem 4%;
+    } 
+
+    .section{
+        padding: 10rem 4% 2rem;
+    }
+
+    .home{
+        padding: 0 4%;
+    }
+
+    .footer{
+        padding: 2rem  4%;
+    }
+
+
+
+}  
+
+
+
+
+
+@media(max-width: 520px){
+    html{
+        font-size: 50%;
+    }
+
+    .home-content h1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-sci{
+        width: 160px;
+    }
+
+    .home-sci a{
+        width: 38px;
+        height: 38px;
+
+    }
+} 
+
+
+@media(max-width: 462px){
+    .home-content h1{
+        font-size: 5 .2rem;
+    }
+
+    .education{
+        padding: 10rem 4% 5rem 5%;
+
+    }
+
+    .contact form .input-box .input-field{
+        width: 100%;
+
+
+    }
+
+    .footer{
+        flex-direction: column-reverse;
+    }
+
+    .footer p{
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+} 
+
+
+@media(max-width: 371px){
+    .home{
+        justify-content: center;
+    }
+
+    .home-content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+/*IMAGENES SCROLL*/
+.slider {
+    width: 60vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.slider .slide-track {
+    display: flex;
+    animation: scroll 5s linear infinite;
+    -webkit-animation: scroll 5s linear infinite;
+    width: calc(150px * 9); /* Ajustar según el tamaño de las imágenes */
+    padding: 1.5rem;
+
+    position: relative;
+    padding: 10px;
+
+}
+
+
+.slider .slide {
+    width: 150px; /* Ancho fijo para cada slide */
+    height: 100px; /* Altura fija para cada slide */
+}
+
+.slider .slide img {
+    width: 100%;
+    height: 100%; /* Ajustar la altura de la imagen al 100% del contenedor slide */
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(150px * 3)); 
+        transform: translateX(calc(150px * 3)); 
+    }
+}
+
+
+
+
+
+
